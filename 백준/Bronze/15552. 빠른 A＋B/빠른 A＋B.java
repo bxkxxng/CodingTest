@@ -18,10 +18,9 @@ public class Main {
             tokenizer = new StringTokenizer(reader.readLine());
             int A = Integer.parseInt(tokenizer.nextToken());
             int B = Integer.parseInt(tokenizer.nextToken());
-            writer.write(Integer.toString(A+B));
+            writer.write(Integer.toString(A + B));
             writer.newLine();
         }
-
         writer.flush();
     }
 }
