@@ -17,14 +17,14 @@ public class Main {
             //몇번째 손님
             int N = Integer.parseInt(st.nextToken());
 
-            int chueng = (N / H) + 1;
-            int ho = (N % H);
+            int chueng = (N % H);
+            int ho = (N / H) + 1;
 
-            if (ho == 0) {
-                ho = H;
-                chueng -= 1;
+            if (chueng == 0) {
+                chueng = H;
+                ho -= 1;
             }
-            System.out.println(ho * 100 + chueng);
+            System.out.println(chueng * 100 + ho);
         }
     }
 }
