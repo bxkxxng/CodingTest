@@ -20,7 +20,7 @@ public class Main {
                         System.out.println(-1);
                     } else {
                         System.out.println(queue.peek());
-                        queue.remove();
+                        queue.poll();
                     }
                 }
                 case "size" -> System.out.println(queue.size());
