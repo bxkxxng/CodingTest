@@ -47,18 +47,18 @@ public class Main {
 
     static int getMaxCount(Map<Integer, Integer> map) {
         int highCount = Collections.max(map.values());
-        List<Integer> matCount = new ArrayList<>();
+        List<Integer> maxCount = new ArrayList<>();
 
         for (Map.Entry<Integer, Integer> newMap : map.entrySet()) {
             if (newMap.getValue() == highCount) {
-                matCount.add(newMap.getKey());
+                maxCount.add(newMap.getKey());
             }
         }
-        Collections.sort(matCount);
-        if (matCount.size() > 1) {
-            return matCount.get(1);
+        Collections.sort(maxCount);
+        if (maxCount.size() > 1) {
+            return maxCount.get(1);
         } else {
-            return matCount.get(0);
+            return maxCount.get(0);
         }
     }
 
