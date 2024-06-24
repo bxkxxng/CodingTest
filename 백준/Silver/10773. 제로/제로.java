@@ -11,7 +11,7 @@ public class Main {
         Stack<Integer> stack = new Stack();
         for (int i = 0; i < K; i++) {
             int num = Integer.parseInt(br.readLine());
-            if (num == 0 && !stack.empty()) stack.pop();
+            if (num == 0) stack.pop();
             else stack.push(num);
         }
         int sum = 0;
