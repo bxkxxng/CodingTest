@@ -1,21 +1,24 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.math.BigInteger;
 
 public class Main {
     public static void main(String[] args) throws IOException {
+        //abcde => 12345
+        //Math.pow
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int L = Integer.parseInt(br.readLine());
+        String word = br.readLine();
+        BigInteger M = new BigInteger("1234567891");
+        BigInteger sum = new BigInteger("0");
+        BigInteger r = new BigInteger("31");
+        BigInteger pow = new BigInteger("1");
 
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        String alphabet = st.nextToken();
-
-        long hasing = 0;
         for (int i = 0; i < L; i++) {
-            int alphabetToInt = alphabet.charAt(i) - 96;
-            hasing += (long) (alphabetToInt * Math.pow(31, i));
+            sum = sum.add(new BigInteger(String.valueOf(word.charAt(i) - 96)).multiply(pow));
+            pow = pow.multiply(r);
         }
-        System.out.println(hasing);
+        System.out.println(sum.mod(M));
     }
 }
