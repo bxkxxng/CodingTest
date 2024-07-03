@@ -29,10 +29,7 @@ public class Main {
         Arrays.sort(testNo);
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < testNo.length; i++) {
-            sb.append(testNo[i]);
-            if (i < testNo.length - 1) {
-                sb.append(" ");
-            }
+            sb.append(testNo[i] + " ");
         }
         System.out.print(sb);
     }
