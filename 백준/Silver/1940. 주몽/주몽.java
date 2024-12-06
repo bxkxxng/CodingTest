@@ -1,7 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashMap;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -17,17 +17,22 @@ public class Main {
             suit[i] = Integer.parseInt(st.nextToken());
         }
 
+        Arrays.sort(suit);
+        // 1 2 3 4 5 7
         int count = 0;
-
-        HashMap<Integer, Integer> Nmap = new HashMap<>();
-
-        for (int num : suit) {
-            int complement = M - num;
-            if (Nmap.containsKey(complement) && Nmap.get(complement) > 0) {
+        int start = 0;
+        int end = N - 1;
+        
+        while (start < end) {
+            int sum = suit[start] + suit[end];
+            if (sum == M) {
                 count++;
-                Nmap.put(complement, Nmap.get(complement) - 1);
+                start++;
+                end--;
+            } else if (sum < M) {
+                start++;
             } else {
-                Nmap.put(num, Nmap.getOrDefault(num, 0) + 1);
+                end--;
             }
         }
         System.out.println(count);
